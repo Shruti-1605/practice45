@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    #input-box {
+        height: 200px;
+        width: 300px;
+        border: 5px solid black;
+        background-color: rgb(236, 213, 217);
+    }
+</style>
+
+
+<body>
+    <div>
+        <input id="input-box" type="text">
+    </div>
+    <button id="btn">click here</button>
+    
+    <ul id="list">All list Items</ul>
+
+    <script>
+
+        let button = document.getElementById("btn");
+        let list = document.getElementById("list");
+
+        button.addEventListener("click", function () {
+
+            let newlist = document.createElement("li");
+            let input = document.getElementById("input-box").value;
+            newlist.innerText = input;
+
+            let deletebutton = document.createElement("Button");
+            deletebutton.textContent="Delete";
+            deletebutton.style.marginLeft = "10px";
+            newlist.appendChild(deletebutton);
+            list.appendChild(newlist);
+            deletebutton.addEventListener("click" , function(){
+                list.removeChild(newlist);
+            })
+            });
+
+
+            let editButton = documnent.createElement("button");
+            editButton.textContent="edit";
+            editbutton.style.marginLeft = "10px";
+            newlist.appendChild(editbutton);
+            list.appendChild(newlist);
+            editButton.addEventListener("click",function(){
+                list.removeChild(newlist);
+            });
+    </script>
+</body>
+
+</html>
